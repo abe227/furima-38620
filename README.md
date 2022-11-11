@@ -7,12 +7,13 @@
 | encrypted_password | string              | null: false               |
 | nickname           | string              | null: false               |
 | name               | string              | null; false               |
-| birthday           | integer            | null: false               |
+| katakana_name      | string              | null: false               |
+| birthday           | date                | null: false               |
 
 ### Association
 
 * has_many :items
-* has_many :purchase
+* has_many :purchases
 
 
 ## items table
@@ -22,19 +23,19 @@
 | title                               | string     | null: false                    |
 | explanation                         | text       | null: false                    |
 | price                               | integer    | null: false                    |
-| category                            | integer    | null: false,                   |
-| situation                           | integer    | null: false                    |
-| cost                                | integer    | null: false                    |
-| date                                | integer    | null: false                    |
-| sender                              | integer    | null: false                    |
-| user                                | reference  | null: false, foreign_key: true |  
+| category_id                         | integer    | null: false                    |
+| situation_id                        | integer    | null: false                    |
+| cost_id                             | integer    | null: false                    |
+| days_to_ship_id                     | integer    | null: false                    |
+| prefecture_id                       | integer    | null: false                    |
+| user                                | references | null: false, foreign_key: true |  
 
 ### Association
 
 - belongs_to :user
 - has_one :purchase
 
-## purchase 
+## purchase table
 
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
@@ -45,7 +46,7 @@
 
 - belongs_to :item
 - belongs_to :user
-- has_one : home address
+- has_one : home_address
 
 
 ## home address
@@ -54,11 +55,13 @@
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
 | post_code        | string     | null: false                    |
-| prefectures      | string     | null: false                    |
+| prefectures_id   | integer    | null: false                    |
 | municipalities   | string     | null: false                    |
 | address          | string     | null: false                    |
 | building_name    | string     |                                |
-| phone_number     | integer    | null: false                    |
+| phone_number     | string     | null: false                    |
+| purchase         | reference  | null: false, foreign_key: true |
+
 
 
 ### Association

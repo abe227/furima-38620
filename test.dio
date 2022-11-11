@@ -7,22 +7,22 @@
                 <mxCell id="6" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="3">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="&lt;u&gt;usersテーブル&lt;br&gt;emailカラム（string型　NOTNULL 　ユニーク制約&lt;br&gt;passwordカラム　（string型　NOTNULL）&lt;br&gt;encryptedpasswordカラム（string型　NOTNULL)&lt;br&gt;nicknameカラム（string型　NOTNULL&lt;br&gt;nameカラム　（string型　NOTNULL）&lt;br&gt;birthdayカラム　（integer型　NOTNULL）&lt;br&gt;&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="60" y="120" width="270" height="140" as="geometry"/>
+                <mxCell id="2" value="&lt;u&gt;usersテーブル&lt;br&gt;emailカラム（string型　NOTNULL 　ユニーク制約&lt;br&gt;passwordカラム　（string型　NOTNULL）&lt;br&gt;encryptedpasswordカラム（string型　NOTNULL)&lt;br&gt;nicknameカラム（string型　NOTNULL&lt;br&gt;nameカラム　（string型　NOTNULL）&lt;br&gt;katakana_nameカラム　（string型　NOTNULL）　&lt;br&gt;birthdayカラム　（date型　NOTNULL）&lt;br&gt;&lt;/u&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="120" width="340" height="190" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="itemsテーブル&lt;br&gt;titleカラム（string型　NOTNULL)&lt;br&gt;explanationカラム　（text型　NOTNULL&lt;br&gt;pliceカラム　（integer型　NOTNULL）&lt;br&gt;categoryカラム　（integer型&lt;span&gt;　NOTNULL)&lt;/span&gt;&lt;br&gt;situationカラム（integer型　NOTNULL）&lt;br&gt;costカラム（integer型　NOTNULL）&lt;br&gt;place（integer型　NOTNULL）&lt;br&gt;dateカラム（integer型　NOTNULL）&lt;br&gt;sevderカラム　（integer型　NOTNULL）&lt;br&gt;userカラム（reference型　NOTNULL 外部キー）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="480" y="90" width="320" height="180" as="geometry"/>
+                <mxCell id="3" value="itemsテーブル&lt;br&gt;titleカラム（string型　NOTNULL)&lt;br&gt;explanationカラム　（text型　NOTNULL&lt;br&gt;pliceカラム　（integer型　NOTNULL）&lt;br&gt;categoryカラム　（integer型&lt;span&gt;　NOTNULL)&lt;/span&gt;&lt;br&gt;situationカラム（integer型　NOTNULL）&lt;br&gt;costカラム（integer型　NOTNULL）&lt;br&gt;place（integer型　NOTNULL）&lt;br&gt;days_to_shipカラム（integer型　NOTNULL）&lt;br&gt;prefectureカラム　（integer型　NOTNULL）&lt;br&gt;userカラム（reference型　NOTNULL 外部キー）" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="480" y="90" width="390" height="220" as="geometry"/>
                 </mxCell>
                 <mxCell id="4" value="&lt;span&gt;purchaseテーブル&lt;/span&gt;&lt;br&gt;&lt;span&gt;userカラム（reference型　NOTNULL 外部キー）&lt;/span&gt;&lt;br&gt;&lt;span&gt;itemsカラム（reference型　NOTNULL 外部キー）&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="230" y="420" width="280" height="130" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="&lt;span&gt;home addressテーブル&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp;post codeカラム（string型　NOTNULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;prefecturesカラム（　NOTNULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;municiparities( NOT NULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;address（　NOT NULL）&lt;/span&gt;&lt;br&gt;&lt;span&gt;phone number(string型　NOT NULL)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="630" y="420" width="290" height="130" as="geometry"/>
+                <mxCell id="5" value="&lt;span&gt;home addressテーブル&lt;/span&gt;&lt;br&gt;&lt;span&gt;&amp;nbsp;post codeカラム（string型　NOTNULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;prefecturesカラム（&lt;/span&gt;string型&amp;nbsp;&lt;span&gt;NOTNULL)&lt;/span&gt;&lt;br&gt;&lt;span&gt;senderカラム(integer型 NOT NULL 外部キー)&lt;/span&gt;&lt;br&gt;&lt;span&gt;address（&lt;/span&gt;string型&amp;nbsp;&lt;span&gt;NOT NULL）&lt;br&gt;&lt;/span&gt;building_name ()&lt;br&gt;&lt;span&gt;phone number(string型　NOT NULL)&lt;br&gt;purchaseカラム　（&lt;/span&gt;reference型　NOTNULL 外部キー)&lt;span&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="420" width="380" height="160" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="350" y="210" as="sourcePoint"/>
-                        <mxPoint x="350" y="170" as="targetPoint"/>
+                        <mxPoint x="414" y="220" as="sourcePoint"/>
+                        <mxPoint x="414" y="180" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="8" value="" style="endArrow=none;html=1;entryX=0.337;entryY=1.016;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.875;exitY=-0.031;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4" target="3">
@@ -34,15 +34,15 @@
                 </mxCell>
                 <mxCell id="9" value="" style="endArrow=none;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="590" y="300" as="sourcePoint"/>
-                        <mxPoint x="550" y="280" as="targetPoint"/>
+                        <mxPoint x="610" y="340" as="sourcePoint"/>
+                        <mxPoint x="570" y="320" as="targetPoint"/>
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="10" value="" style="endArrow=none;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="480" y="370" as="sourcePoint"/>
-                        <mxPoint x="510" y="390" as="targetPoint"/>
+                        <mxPoint x="490" y="380" as="sourcePoint"/>
+                        <mxPoint x="520" y="400" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="12" value="" style="endArrow=classic;html=1;entryX=0.368;entryY=-0.035;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.637;exitY=1.032;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="2" target="4">
@@ -54,8 +54,11 @@
                 </mxCell>
                 <mxCell id="13" value="" style="endArrow=none;html=1;" edge="1" parent="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
-                        <mxPoint x="230" y="290" as="sourcePoint"/>
-                        <mxPoint x="250" y="270" as="targetPoint"/>
+                        <mxPoint x="280" y="340" as="sourcePoint"/>
+                        <mxPoint x="300" y="320" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="290" y="330"/>
+                        </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="14" value="" style="endArrow=none;html=1;rounded=0;exitX=1.011;exitY=0.454;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="4">
