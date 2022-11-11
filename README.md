@@ -1,5 +1,6 @@
 ## users table
 
+
 | Column             | Type                | Options                   |
 |--------------------|---------------------|---------------------------|
 | email              | string              | null: false, unique: true |
@@ -39,7 +40,7 @@
 
 ### Association
 
-- belongs_to :items
+- belongs_to :item
 - belongs_to :user
 
 
