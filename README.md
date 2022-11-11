@@ -9,7 +9,7 @@
 
 ### Association
 
-* has_many :items
+* has_many :item
 * has_one :purchase
 
 
