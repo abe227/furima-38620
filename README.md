@@ -51,7 +51,7 @@
 - has_one : home_address
 
 
-## home_address table
+## home_addresses table
 
 
 | Column           | Type       | Options                        |
