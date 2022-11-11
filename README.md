@@ -6,8 +6,10 @@
 | email              | string              | null: false, unique: true |
 | encrypted_password | string              | null: false               |
 | nickname           | string              | null: false               |
-| name               | string              | null; false               |
-| katakana_name      | string              | null: false               |
+| surname            | string              | null; false               |
+| kana_surname       | string              | null: false               |
+| first_name         | string              | null: false               |
+| kana_first_name    | string              | null: false               |
 | birthday           | date                | null: false               |
 
 ### Association
@@ -35,7 +37,7 @@
 - belongs_to :user
 - has_one :purchase
 
-## purchase table
+## purchases table
 
 | Column      | Type       | Options                        |
 |-------------|------------|--------------------------------|
@@ -46,7 +48,7 @@
 
 - belongs_to :item
 - belongs_to :user
-- has_one : home_address
+- has_one : home address
 
 
 ## home address
@@ -55,7 +57,7 @@
 | Column           | Type       | Options                        |
 |------------------|------------|--------------------------------|
 | post_code        | string     | null: false                    |
-| prefectures_id   | integer    | null: false                    |
+| prefecture_id    | integer    | null: false                    |
 | municipalities   | string     | null: false                    |
 | address          | string     | null: false                    |
 | building_name    | string     |                                |
