@@ -48,10 +48,10 @@
 
 - belongs_to :item
 - belongs_to :user
-- has_one : home address
+- has_one : home_address
 
 
-## home address
+## home_address table
 
 
 | Column           | Type       | Options                        |
