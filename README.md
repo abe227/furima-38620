@@ -1,60 +1,24 @@
-## users table
+# README
 
-| Column             | Type                | Options                   |
-|--------------------|---------------------|---------------------------|
-| email              | string              | null: false, unique: true |
-| encrypted_password | string              | null: false               |
-| name               | string              | null: false               |
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-### Association
+Things you may want to cover:
 
-* has_many :items
-* has_one :purchase
+* Ruby version
 
+* System dependencies
 
-## items table
+* Configuration
 
-| Column                              | Type       | Options                        |
-|-------------------------------------|------------|--------------------------------|
-| title                               | string     | null: false                    |
-| explanation                         | text       | null: false                    |
-| price                               | string     | null: false                    |
-| category                            |            | null: false,                   |
-| situation                           |            | null: false                    |
-| cost                                |            | null: false                    |
-| date                                |            | null: false                    |
-| user                                | reference  | null: false, foreign_key: true |  
+* Database creation
 
-### Association
+* Database initialization
 
-- belongs_to :user
-- has_one :purchase
+* How to run the test suite
 
-## purchase 
+* Services (job queues, cache servers, search engines, etc.)
 
-| Column      | Type       | Options                        |
-|-------------|------------|--------------------------------|
-| items       | references | null: false, foreign_key: true |
-| user        | references | null: false, foreign_key: true |
+* Deployment instructions
 
-### Association
-
-- belongs_to :items
-- belongs_to :user
-
-
-## home address
-
-
-| Column           | Type       | Options                        |
-|------------------|------------|--------------------------------|
-| post code        | string     | null: false                    |
-| prefectures      |            | null: false                    |
-| municiparities   |            | null: false                    |
-| address          |            | null: false                    |
-| phone number     | string     | null: false                    |
-
-
-### Association
-
-- belongs_to :purchase
+* ...
