@@ -9,7 +9,7 @@ class User < ApplicationRecord
          validates :password, format: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
          validates :encrypted_password, presence: true
          validates :email, presence: true
-         VALID_NAME_REGEX = /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/
+         VALID_NAME_REGEX = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/
          validates :surname, format: { with: VALID_NAME_REGEX }
          validates :first_name, format: { with: VALID_NAME_REGEX }
          validates :kana_surname, presence: true, format: /\A[ァ-ヶー－]+\z/

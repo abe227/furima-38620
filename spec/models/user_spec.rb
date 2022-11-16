@@ -107,24 +107,35 @@ require 'rails_helper'
      end
 
      it '姓（カナ）にカタカナ以外の文字（平仮名・漢字・英数字・記号）が含まれていると登録できない'  do
-      @user.password = 'あ'
-      @user.password_confirmation = 'あ'
+      @user.kana_surname = 'あ'
       @user.valid?    
-      expect(@user.errors.full_messages).to include('Password is invalid') 
+      expect(@user.errors.full_messages).to include('Kana surname is invalid') 
      end
 
      it '名（カナ）にカタカナ以外の文字（平仮名・漢字・英数字・記号）が含まれていると登録できない'  do
-      @user.password = 'あ'
-      @user.password_confirmation = 'あ'
+      @user.kana_first_name = 'あ'
       @user.valid?    
-      expect(@user.errors.full_messages).to include('Password is invalid') 
+      expect(@user.errors.full_messages).to include('Kana first name is invalid') 
      end
 
      it "birthdayが空だと登録できない" do  
       @user.birthday = ''
       @user.valid?
       expect(@user.errors.full_messages).to include("Birthday can't be blank")
-     end
+    end
+
+    it '姓（全角）に半角文字が含まれていると登録できない'  do
+      @user.kana_surname = 'a'
+      @user.valid?    
+      expect(@user.errors.full_messages).to include('Kana surname is invalid') 
+    end
+
+    it '名（全角）に半角文字が含まれていると登録できない'  do
+      @user.kana_first_name = 'a'
+      @user.valid?    
+      expect(@user.errors.full_messages).to include('Kana first name is invalid') 
+    end
+     
    end
   end
  end
