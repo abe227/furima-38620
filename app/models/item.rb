@@ -1,0 +1,29 @@
+class Item < ApplicationRecord
+  has_one_attached :image
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :category
+  belongs_to :situation
+  belongs_to :cost
+  belongs_to :prefecture
+  belongs_to :days_to_ship
+  belongs_to :user
+  
+
+  validates :image, presence: true
+  validates :title, presence: true
+  validates :explanation, presence: true
+  validates :price, presence: true, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
+  validates :category_id, presence: true, numericality: { other_than: 1 , message: "can't be blank" } 
+  validates :situation_id, presence: true, numericality: { other_than: 1 , message: "can't be blank" }
+  validates :cost_id, presence: true, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :days_to_ship_id, presence: true, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :prefecture_id, presence: true, numericality: { other_than: 1 , message: "can't be blank"}
+  
+
+ 
+  
+
+  
+  
+
+end
