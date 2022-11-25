@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+  end
     
 
   def edit
@@ -28,7 +29,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    
+    if
       redirect_to item_path
     else
       render :edit
