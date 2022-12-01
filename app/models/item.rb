@@ -7,6 +7,8 @@ class Item < ApplicationRecord
   belongs_to :prefecture
   belongs_to :days_to_ship
   belongs_to :user
+  has_one    :purchase
+ 
   
 
   validates :image, presence: true

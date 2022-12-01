@@ -19,6 +19,8 @@ RSpec.describe PurchaseHomeAddress, type: :model do
         @purchase_home_address.building_name = ''
         expect(@purchase_home_address).to be_valid
       end
+
+      
     end
 
     context '内容に問題がある場合' do
@@ -64,7 +66,11 @@ RSpec.describe PurchaseHomeAddress, type: :model do
         expect(@purchase_home_address.errors.full_messages).to include("Phone number can't be blank")
       end
 
-
+      it "tokenが空では登録できないこと" do
+        @purchase_home_address.token = nil
+        @purchase_home_address.valid?
+        expect(@purchase_home_address.errors.full_messages).to include("Token can't be blank")
+      end
 
 
       
