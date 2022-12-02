@@ -60,10 +60,28 @@ RSpec.describe PurchaseHomeAddress, type: :model do
         expect(@purchase_home_address.errors.full_messages).to include("Phone number can't be blank")
       end
 
-      it 'phone_numberが10桁以上11桁以内の半角数値のみでないと保存できないこと' do
-        @purchase_home_address.phone_number = ''
+      it 'phone_numberが9桁以下では購入できない' do
+        @purchase_home_address.phone_number = '12345678'
         @purchase_home_address.valid?
-        expect(@purchase_home_address.errors.full_messages).to include("Phone number can't be blank")
+        expect(@purchase_home_address.errors.full_messages).to include("Phone number is invalid")
+      end
+
+      it 'phone_numberが12桁以上では購入できない' do
+        @purchase_home_address.phone_number = '1234567890123'
+        @purchase_home_address.valid?
+        expect(@purchase_home_address.errors.full_messages).to include("Phone number is invalid")
+      end
+
+      it 'user_idが空だと保存できないこと' do
+        @purchase_home_address.user_id = ''
+        @purchase_home_address.valid?
+        expect(@purchase_home_address.errors.full_messages).to include("User can't be blank")
+      end
+
+      it 'item_idが空だと保存できないこと' do
+        @purchase_home_address.item_id = ''
+        @purchase_home_address.valid?
+        expect(@purchase_home_address.errors.full_messages).to include("Item can't be blank")
       end
 
       it "tokenが空では登録できないこと" do
