@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   before_action :prevent_url, only: [:edit]
 
   def index
-    @items = Item.all.order("created_at DESC")
+    @items = Item.all.order('created_at DESC')
   end
 
   def new
@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
 
   def show
   end
-    
 
   def edit
   end
@@ -34,28 +33,24 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
-
   end
 
   def destroy
-    if @item.destroy
-      redirect_to root_path
-    
-    end
- 
+    return unless @item.destroy
+
+    redirect_to root_path
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:title, :explanation, :price, :image, :category_id, :situation_id, :cost_id, :days_to_ship_id, :prefecture_id).merge(user_id: current_user.id, )
+    params.require(:item).permit(:title, :explanation, :price, :image, :category_id, :situation_id, :cost_id, :days_to_ship_id,
+                                 :prefecture_id).merge(user_id: current_user.id)
   end
-
 
   def home_addresses_params
     params.permit(:post_code, :prefecture, :city, :house_number, :building_name).merge(item_id: @item.id)
   end
-  
 
   def set_item
     @item = Item.find(params[:id])
@@ -66,11 +61,8 @@ class ItemsController < ApplicationController
   end
 
   def prevent_url
-    if  @item.purchase.present?
-      redirect_to root_path
-    end
+    return unless @item.purchase.present?
 
-
+    redirect_to root_path
   end
-
 end
