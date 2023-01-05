@@ -35,8 +35,13 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
-
-  
+        nickname: ニックネーム
+        surname: 名字
+        first_name: 名前
+        kana_surname: カナ名字
+        kana_first_name: カナ名前
+        birthday: 誕生日
+      
     models:
       user: ユーザー
   devise:
@@ -164,5 +169,6 @@ ja:
         phone_number: 電話番号
         token: クレジットカード情報
         prefecture_id: 都道府県
+      
         
         

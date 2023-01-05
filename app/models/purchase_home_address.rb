@@ -12,7 +12,7 @@ class PurchaseHomeAddress
     validates :token, presence: true
   end
 
-  validates :prefecture_id, numericality: {other_than: 1, }
+  validates :prefecture_id, numericality: { other_than: 1, message: "を入力してください" }
 
   def save
 
